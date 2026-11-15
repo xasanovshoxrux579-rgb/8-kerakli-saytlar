@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html lang="uz"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>HiddenWeb — Internet olamiga eshik</title>
+
+<style> * { margin: 0; padding: 0; box-sizing: border-box; } :root { --bg: #080b16; --card: rgba(255,255,255,0.055); --border: rgba(255,255,255,0.11); --text: #f5f7ff; --muted: #929bb5; --accent: #7c5cff; } body { min-height: 100vh; font-family: "Segoe UI", Arial, sans-serif; background: radial-gradient(ellipse at 15% 10%, #252057 0%, transparent 42%), radial-gradient(ellipse at 90% 85%, #123c52 0%, transparent 38%), var(--bg); color: var(--text); padding: 35px 20px; } .container { max-width: 1050px; margin: auto; } header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 70px; } .logo { font-size: 25px; font-weight: 800; letter-spacing: -1px; } .logo span { color: #9b87ff; } .status { font-size: 12px; color: #8ee8b1; background: rgba(66, 220, 140, 0.09); border: 1px solid rgba(66,220,140,0.2); padding: 9px 14px; border-radius: 30px; } .hero { text-align: center; margin-bottom: 48px; } .badge { display: inline-block; color: #b7aaff; border: 1px solid rgba(153,130,255,.35); background: rgba(124,92,255,.12); padding: 8px 15px; border-radius: 30px; font-size: 12px; margin-bottom: 22px; } h1 { font-size: clamp(36px, 6vw, 64px); line-height: 1.12; letter-spacing: -2px; margin-bottom: 20px; } h1 span { background: linear-gradient(90deg, #9e8bff, #69d7ff); -webkit-background-clip: text; background-clip: text; color: transparent; } .hero p { max-width: 550px; margin: auto; line-height: 1.8; color: var(--muted); font-size: 15px; } .search-box { max-width: 470px; margin: 30px auto 0; position: relative; } .search-box input { width: 100%; background: rgba(255,255,255,.06); border: 1px solid var(--border); border-radius: 14px; padding: 16px 18px; color: white; font-size: 14px; outline: none; transition: .25s; } .search-box input:focus { border-color: #8971ff; box-shadow: 0 0 25px rgba(124,92,255,.12); } .section-title { display: flex; justify-content: space-between; align-items: center; margin-bottom: 22px; } .section-title h2 { font-size: 19px; } .section-title span { color: var(--muted); font-size: 12px; } .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 17px; } .card { position: relative; overflow: hidden; display: flex; flex-direction: column; min-height: 220px; padding: 23px; border-radius: 20px; background: var(--card); border: 1px solid var(--border); text-decoration: none; color: var(--text); transition: transform .25s, border-color .25s, background .25s; animation: appear .6s ease both; } .card:hover { transform: translateY(-6px); border-color: rgba(154,132,255,.65); background: rgba(255,255,255,.09); } .card::after { content: ""; position: absolute; width: 100px; height: 100px; right: -45px; top: -45px; background: var(--glow, #7c5cff); opacity: .13; filter: blur(35px); border-radius: 50%; } .icon { display: grid; place-items: center; width: 51px; height: 51px; border-radius: 15px; background: rgba(255,255,255,.08); font-size: 25px; margin-bottom: 21px; } .card h3 { font-size: 17px; margin-bottom: 9px; } .card p { color: var(--muted); font-size: 12px; line-height: 1.7; margin-bottom: 20px; } .open { margin-top: auto; color: #b4a5ff; font-size: 12px; font-weight: 600; } .open b { margin-left: 5px; transition: margin .2s; } .card:hover .open b { margin-left: 10px; } footer { margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; gap: 15px; color: var(--muted); font-size: 12px; line-height: 1.8; } footer strong { color: #b5a5ff; } .hidden { display: none; } @keyframes appear { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } } @media (max-width: 750px) { .grid { grid-template-columns: repeat(2, 1fr); } header { margin-bottom: 50px; } h1 { letter-spacing: -1px; } } @media (max-width: 480px) { body { padding: 25px 15px; } .grid { grid-template-columns: 1fr; } .card { min-height: 195px; } footer { flex-direction: column; } } </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+
+<header>
+    <div class="logo">Hidden<span>Web.</span></div>
+    <div class="status">● 8 ta foydali sayt</div>
+</header>
+
+<section class="hero">
+    <div class="badge">✦ INTERNETNING YASHIRIN IMKONIYATLARI</div>
+
+    <h1>
+        Internetning<br>
+        <span>boshqa tomonini</span> kashf eting.
+    </h1>
+
+    <p>
+        Ko‘pchilik bilmaydigan, lekin kundalik hayotda
+        juda asqatadigan internet vositalari.
+        Bitta tugma — yangi imkoniyat.
+    </p>
+
+    <div class="search-box">
+        <input
+            type="text"
+            id="search"
+            placeholder="🔎 Saytlarni qidirish..."
+            autocomplete="off"
+        >
+    </div>
+</section>
+
+<section>
+    <div class="section-title">
+        <h2>✦ Siz uchun tanlangan saytlar</h2>
+        <span id="count">7 ta sayt</span>
+    </div>
+
+    <div class="grid" id="grid">
+
+        <a class="card"
+           href="https://www.photopea.com/"
+           target="_blank" rel="noopener noreferrer"
+           style="--glow:#39a7ff"
+           data-name="photopea rasm photoshop dizayn">
+            <div class="icon">🎨</div>
+            <h3>Photopea</h3>
+            <p>Brauzer ichida rasmlarni tahrirlang. PSD fayllar bilan ham ishlaydi.</p>
+            <div class="open">Saytga o'tish <b>↗</b></div>
+        </a>
+
+        <a class="card"
+           href="https://excalidraw.com/"
+           target="_blank" rel="noopener noreferrer"
+           style="--glow:#ffbf69"
+           data-name="excalidraw chizma diagramma rasm g'oya">
+            <div class="icon">✏️</div>
+            <h3>Excalidraw</h3>
+            <p>G‘oyalar, sxemalar va diagrammalarni chiroyli chizing.</p>
+            <div class="open">Saytga o'tish <b>↗</b></div>
+        </a>
+
+        <a class="card"
+           href="https://notebooklm.google.com/"
+           target="_blank" rel="noopener noreferrer"
+           style="--glow:#65e0b5"
+           data-name="notebooklm suniy intellekt ai hujjat pdf">
+            <div class="icon">🧠</div>
+            <h3>NotebookLM</h3>
+            <p>Hujjatlarni o‘rganing, mazmunini umumlashtiring va savollar bering.</p>
+            <div class="open">Saytga o'tish <b>↗</b></div>
+        </a>
+
+        <a class="card"
+           href="https://www.wolframalpha.com/"
+           target="_blank" rel="noopener noreferrer"
+           style="--glow:#ff7b91"
+           data-name="wolframalpha matematika hisob kitob fan">
+            <div class="icon">🧮</div>
+            <h3>WolframAlpha</h3>
+            <p>Matematika, formulalar va turli ilmiy hisob-kitoblarni bajaring.</p>
+            <div class="open">Saytga o'tish <b>↗</b></div>
+        </a>
+
+        <a class="card"
+           href="https://squoosh.app/"
+           target="_blank" rel="noopener noreferrer"
+           style="--glow:#62d6ff"
+           data-name="squoosh rasm hajm siqish tezlik">
+            <div class="icon">🖼️</div>
+            <h3>Squoosh</h3>
+            <p>Rasmlar hajmini kamaytiring va ularni internetga yuklashni osonlashtiring.</p>
+            <div class="open">Saytga o'tish <b>↗</b></div>
+        </a>
+
+        <a class="card"
+           href="https://asoftmurmur.com/"
+           target="_blank" rel="noopener noreferrer"
+           style="--glow:#a98aff"
+           data-name="soft murmur musiqa yomgir tabiat tovush dam olish">
+            <div class="icon">🎧</div>
+            <h3>A Soft Murmur</h3>
+            <p>Yomg‘ir, shamol va tabiat tovushlari bilan dam oling yoki diqqatni jamlang.</p>
+            <div class="open">Saytga o'tish <b>↗</b></div>
+        </a>
+
+        <a class="card"
+           href="https://www.weirdwebtools.com/"
+           target="_blank" rel="noopener noreferrer"
+           style="--glow:#ffbd69"
+           data-name="weird web tools noodatiy qiziqarli internet vositalar">
+            <div class="icon">🕵️</div>
+            <h3>Weird Web Tools</h3>
+            <p>G‘aroyib, qiziqarli va foydali internet vositalarini kashf eting.</p>
+            <div class="open">Saytga o'tish <b>↗</b></div>
+        </a>
+        <a class="card"
+           href="https://www.crazygames.com/"
+           target="_blank" rel="noopener noreferrer"
+           style="--glow:#ff6b6b"
+           data-name="crazygames o'yinlar game">
+            <div class="icon">🎮</div>
+            <h3>CrazyGames</h3>
+            <p>Qiziqarli onlayn o‘yinlarni brauzerda o‘ynang.</p>
+            <div class="open">O‘yinlarni ochish <b>↗</b></div>
+        </a>
+
+    </div>
+</section>
+
+<footer>
+    <div>
+        <strong>HiddenWeb.</strong><br>
+        Internetni boshqacha kashf eting.
+    </div>
+    <div>
+        Microsoft Edge uchun moslashtirilgan<br>
+        © 2026 · Shaxsiy mini portal
+    </div>
+</footer>
+</div>
+
+<script> const search = document.getElementById("search"); const cards = [...document.querySelectorAll(".card")]; const count = document.getElementById("count"); search.addEventListener("input", function () { const query = this.value.toLowerCase().trim(); let visible = 0; cards.forEach(card => { const text = ( card.innerText + " " + card.dataset.name ).toLowerCase(); const match = text.includes(query); card.classList.toggle("hidden", !match); if (match) visible++; }); count.textContent = visible + " ta sayt"; }); </script>
+
+</body> </html>
